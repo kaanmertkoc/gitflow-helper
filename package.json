@@ -1,5 +1,5 @@
 {
-  "name": "@kaanmertkoc/gitflow-helper",
+  "name": "kaanmertkoc-gitflow-helper",
   "version": "1.0.1",
   "scripts": {
     "patch-release": "npm version patch && npm publish && git push --follow-tags",
