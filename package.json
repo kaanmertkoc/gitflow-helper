@@ -9,6 +9,11 @@
   },
   "description": "A helper tool designed for git flow. After creating a hotfix, by running a simple command this helper can update version, commit and open a pr to the main.",
   "main": "index.js",
+  "bin": {
+    "hotfix": "hotfix.js",
+    "release": "release.js",
+    "post-merge": "post-merge.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kaanmertkoc/gitflow-helper.git"
@@ -29,5 +34,8 @@
   "bugs": {
     "url": "https://github.com/kaanmertkoc/gitflow-helper/issues"
   },
-  "homepage": "https://github.com/kaanmertkoc/gitflow-helper#readme"
+  "homepage": "https://github.com/kaanmertkoc/gitflow-helper#readme",
+  "dependencies": {
+    "shelljs": "^0.8.5"
+  }
 }
