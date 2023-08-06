@@ -1,0 +1,33 @@
+{
+  "name": "@linclark/gitflow-helper",
+  "version": "1.0.1",
+  "scripts": {
+    "patch-release": "npm version patch && npm publish && git push --follow-tags",
+    "git-commit": "git add -A . && git commit -a -m 'gh-pages update'",
+    "git-push": "git push origin gh-pages --force && git checkout master",
+    "deploy": "npm run build && npm run git-commit && npm run git-push"
+  },
+  "description": "A helper tool designed for git flow. After creating a hotfix, by running a simple command this helper can update version, commit and open a pr to the main.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaanmertkoc/gitflow-helper.git"
+  },
+  "keywords": [
+    "Git",
+    "GitFlow",
+    "GitFlow",
+    "Helper",
+    "Helper",
+    "CLI",
+    "Command",
+    "Line",
+    "Terminal"
+  ],
+  "author": "Kaan Koç",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kaanmertkoc/gitflow-helper/issues"
+  },
+  "homepage": "https://github.com/kaanmertkoc/gitflow-helper#readme"
+}
