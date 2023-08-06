@@ -1,5 +1,5 @@
 {
-  "name": "@linclark/gitflow-helper",
+  "name": "@kaanmertkoc/gitflow-helper",
   "version": "1.0.1",
   "scripts": {
     "patch-release": "npm version patch && npm publish && git push --follow-tags",
@@ -12,7 +12,8 @@
   "bin": {
     "hotfix": "hotfix.js",
     "release": "release.js",
-    "post-merge": "post-merge.js"
+    "post-merge": "post-merge.js",
+    "package-test": "test.js"
   },
   "repository": {
     "type": "git",
