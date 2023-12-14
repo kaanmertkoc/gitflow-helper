@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 var shell = require('shelljs');
+const { exec } = require('child_process');
+
 
 // Capture the version argument
 var version = process.argv[2];
@@ -16,7 +18,13 @@ function isCommandAvailable(command) {
 
 // Function to execute commands with lolcat for colorful output
 function execWithLolcat(command) {
-  shell.exec(`${command} | lolcat`);
+    exec(`${command} | lolcat`, (err, stdout, stderr) => {
+      if (err) {
+        console.error(`exec error: ${err}`);
+        return;
+      }
+      console.log(stdout);
+    });
 }
 
 // Check for lolcat and GitHub CLI (gh)
