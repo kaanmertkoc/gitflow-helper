@@ -1,12 +1,9 @@
 const { spawnSync } = require('child_process');
 
 describe('hotfix.js', () => {
-  test('exits with status code 1 when no version number is provided', () => {
-    const result = spawnSync('./hotfix.js', [], { shell: true });
+  test('exits with status code 0 when a version number is provided', () => {
+    const result = spawnSync('./hotfix.js', ['1.0.1'], { shell: true });
 
-    expect(result.status).toBe(1);
-    expect(result.stderr.toString()).toContain(
-      'You must provide a version number. Usage: hotfix <version>'
-    );
+    expect(result.status).toBe(0);
   });
 });
