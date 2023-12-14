@@ -18,7 +18,7 @@ function isCommandAvailable(command) {
 
 // Function to execute commands with lolcat for colorful output
 function execWithLolcat(command) {
-    exec(`${command} | lolcat`);
+    exec(`${command}`);
 }
 
 // Check for lolcat and GitHub CLI (gh)
