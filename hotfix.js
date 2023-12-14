@@ -3,7 +3,7 @@ var shell = require('shelljs');
 
 // Capture the version argument
 var version = process.argv[2];
-
+console.log(process.argv);
 if (!version) {
   console.error('You must provide a version number. Usage: hotfix <version>');
   process.exit(1);
