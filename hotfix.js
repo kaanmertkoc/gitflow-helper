@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 var shell = require('shelljs');
-const { exec } = require('child_process');
-
 
 // Capture the version argument
 var version = process.argv[2];
@@ -16,12 +14,9 @@ function isCommandAvailable(command) {
   return shell.which(command) !== null;
 }
 
-
 // Check for lolcat and GitHub CLI (gh)
 const isLolcatAvailable = isCommandAvailable('lolcat');
-console.log('🚀 ~ file: hotfix.js:24 ~ isLolcatAvailable:', isLolcatAvailable);
 const isGhAvailable = isCommandAvailable('gh');
-console.log('🚀 ~ file: hotfix.js:26 ~ isGhAvailable:', isGhAvailable);
 
 if (isLolcatAvailable) {
   // Use the provided version to create a hotfix branch
