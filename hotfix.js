@@ -16,10 +16,6 @@ function isCommandAvailable(command) {
   return shell.which(command) !== null;
 }
 
-// Function to execute commands with lolcat for colorful output
-function execWithLolcat(command) {
-    exec(`${command}`);
-}
 
 // Check for lolcat and GitHub CLI (gh)
 const isLolcatAvailable = isCommandAvailable('lolcat');
@@ -29,24 +25,23 @@ console.log('🚀 ~ file: hotfix.js:26 ~ isGhAvailable:', isGhAvailable);
 
 if (isLolcatAvailable) {
   // Use the provided version to create a hotfix branch
-  execWithLolcat(`echo Creating hotfix ${version}`);
-  execWithLolcat(`git flow hotfix start ${version}`);
-  execWithLolcat('echo Hotfix branch created');
-
+  exec(`echo Creating hotfix ${version} | lolcat`);
+  exec(`git flow hotfix start ${version} | lolcat`);
+  exec('echo Hotfix branch created | lolcat');
   // Rest of your commands with lolcat
-  execWithLolcat('echo Hotfix works');
-  execWithLolcat('npm version patch');
-  execWithLolcat('echo made version patch');
-  execWithLolcat('git add . && git commit -m "docs: version bump"');
-  execWithLolcat('echo committed');
-  execWithLolcat('git flow hotfix publish');
-  execWithLolcat('echo published the branch 🎉');
+  exec('echo Hotfix works | lolcat');
+  exec('npm version patch | lolcat');
+  exec('echo made version patch | lolcat');
+  exec('git add . && git commit -m "docs: version bump"');
+  exec('echo committed | lolcat');
+  exec('git flow hotfix publish | lolcat');
+  exec('echo published the branch 🎉 | lolcat');
   if (isGhAvailable) {
-    execWithLolcat(
+    exec(
       `gh pr create --title "Hotfix ${version}" --body "Hotfix ${version}" --base main`
     );
   }
-  execWithLolcat('echo created the PR 🎉');
+  exec('echo created the PR 🎉 | lolcat');
 } else {
   // Use the provided version to create a hotfix branch
   exec(`echo Creating hotfix ${version}`);
