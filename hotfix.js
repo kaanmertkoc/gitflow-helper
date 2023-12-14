@@ -55,20 +55,20 @@ if (isLolcatAvailable) {
   execWithLolcat('echo created the PR 🎉');
 } else {
   // Use the provided version to create a hotfix branch
-  shell.exec(`echo Creating hotfix ${version}`);
-  shell.exec(`git flow hotfix start ${version}`);
-  shell.exec('echo Hotfix branch created');
+  exec(`echo Creating hotfix ${version}`);
+  exec(`git flow hotfix start ${version}`);
+  exec('echo Hotfix branch created');
 
   // Rest of your commands
-  shell.exec('echo Hotfix works');
-  shell.exec('npm version patch');
-  shell.exec('echo made version patch');
-  shell.exec('git add . && git commit -m "docs: version bump"');
-  shell.exec('echo committed');
-  shell.exec('git flow hotfix publish');
-  shell.exec('echo published the branch 🎉');
+  exec('echo Hotfix works');
+  exec('npm version patch');
+  exec('echo made version patch');
+  exec('git add . && git commit -m "docs: version bump"');
+  exec('echo committed');
+  exec('git flow hotfix publish');
+  exec('echo published the branch 🎉');
   if (isGhAvailable) {
-    execWithLolcat(
+    exec(
       `gh pr create --title "Hotfix ${version}" --body "Hotfix ${version}" --base main`
     );
   }
