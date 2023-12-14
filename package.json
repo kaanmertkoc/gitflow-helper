@@ -1,6 +1,6 @@
 {
   "name": "kaanmertkoc-gitflow-helper",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "scripts": {
     "patch-release": "npm version patch && npm publish && git push --follow-tags",
     "git-commit": "git add -A . && git commit -a -m 'gh-pages update'",
