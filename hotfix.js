@@ -21,7 +21,9 @@ function execWithLolcat(command) {
 
 // Check for lolcat and GitHub CLI (gh)
 const isLolcatAvailable = isCommandAvailable('lolcat');
+console.log('🚀 ~ file: hotfix.js:24 ~ isLolcatAvailable:', isLolcatAvailable);
 const isGhAvailable = isCommandAvailable('gh');
+console.log('🚀 ~ file: hotfix.js:26 ~ isGhAvailable:', isGhAvailable);
 
 if (isLolcatAvailable) {
   // Use the provided version to create a hotfix branch
